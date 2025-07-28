@@ -10,6 +10,9 @@ const app = express();
 app.use(cors());
 app.use(express.json()); // ✅ Optional but good practice if working with JSON
 
+
+const connectToDb=require('./db/db');
+connectToDb();
 // Routes
 app.get('/', (req, res) => {
     res.send('hello world');
